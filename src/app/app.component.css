@@ -1,0 +1,19 @@
+.example-spacer {
+    flex: 1 1 auto;
+  
+  }
+  button
+{
+  margin-left: 13px;
+}
+button:hover{
+    background-color: rgb(50, 39, 12);
+    color: aliceblue;
+}
+
+span{
+    font-size: larger;
+}
+mat-toolbar{
+    background-color: rgb(225, 225, 193);
+}
