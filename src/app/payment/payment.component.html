@@ -1,4 +1,5 @@
 <body>
+  <h3 class="grandTotal">Sub-Total: ${{grandTotal}}</h3>
 
   <ng-container >
     <mat-card class="payment">
@@ -21,7 +22,6 @@
     </mat-card>
   </ng-container>
 
- 
 
   <mat-card class="payment">
     <mat-card-content>
@@ -39,11 +39,20 @@
             <input type="number" placeholder="UPI Id" style="margin-left: 150px; " formControlName="upi">
 
             <mat-radio-button class="example-margin" value="cash">Cash On Delivery</mat-radio-button>
-            <input type="submit" placeholder="place order" [disabled]="!formData.valid">
+            <button class="submit" placeholder="place order" [disabled]="!formData.valid">Place order</button>
 
           </mat-radio-group>
+
         </form>
       </section>
     </mat-card-content>
   </mat-card>
+
+  <!-- <mat-radio-group [(ngModel)]="selectedValue">
+    <mat-radio-button value="option1">Option 1</mat-radio-button>
+    <mat-radio-button value="option2">Option 2</mat-radio-button>
+    <mat-radio-button value="option3">Option 3</mat-radio-button>
+  </mat-radio-group>
+  
+  <p>Selected Value: {{ selectedValue }}</p> -->
 </body>

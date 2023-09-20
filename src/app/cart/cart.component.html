@@ -1,47 +1,36 @@
-<ng-container *ngIf="product.length!=0">
-        <div class="table">
-            <div class="cart-product">
-                <table class="tables">
-                    <thead>
-                        <tr>
-                            <th>Sr.No</th>
-                            <th>product Name</th>
-                            <th>Product Image</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let item of product;let i=index">
-                            <td>{{i+1}}</td>
-                            <td>{{item.title}}</td>
-                            <td><img style="width:120px" src="{{item.image}}" alt=""></td>
-                            <td>{{item.price}}</td>
-                            <td><span><button class="incre" (click)="decrement(item.id)">-</button></span><span class="quantity">{{item.quantity}} </span><span><button class="incre"  (click)="increment(item.id)">+</button></span>
-                            </td>
-                            <td>{{item.total*item.quantity}}</td>
-                            <td>
-                                <button style="width: 120px;"  (click)="removeItem(item)"class="danger">Delete</button>
-                            </td>
-                        </tr>
+<ng-container *ngIf="product.length != 0">
+  <div style="display: grid; flex-wrap: wrap;" >
+    
+    <div *ngFor="let item of product; let i=index" class="table" style="display: flex; align-items: center; " class="cart">
+      <img style="width: 120px" src="{{item.image}}" alt="">
+      <div style="margin-left: 10px;">
+        <div class="title">${{item.title}}</div>
+     
+        <div style="padding: 5px;"><strong> Price: ${{item.price}}</strong> </div>
+  <br>
+        <span><button class="incre" (click)="decrement(item.id)">-</button></span>
+        <span class="quantity">{{item.quantity}} </span>
+        <span><button class="incre" (click)="increment(item.id)">+</button></span>
+        <div><strong>Total: ${{item.total * item.quantity}}</strong></div>
+        <button style="width: 120px;" (click)="removeItem(item)" class="danger">Delete</button>
+      </div>
+    </div>
+  </div>
+  <div style="padding: 20px;text-align: center;">
+    <h3><strong>Grand Total:${{grandTotal}}</strong></h3>
+
+  </div>
+<div style="display: flex;justify-content: center;">
+    <tr>
+        <td colspan="3"></td>
         
-                        <tr>
-                            <td colspan="3"></td>
-                            <td><button (click)="emptyCart()"class="danger">Empty Cart</button></td>
-                            <td><button routerLink="../products"class="button">Shop More</button></td>
-                            <td><button class="CheckOut"  (click)="CheckOut()">CheckOut</button></td>
-                            <td><strong>Grand Total:${{grandTotal}}</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <td><button (click)="emptyCart()"class="danger">Empty Cart</button></td>
+        <td><button routerLink="../products"class="button">Shop More</button></td>
+        <td><button class="CheckOut"  (click)="CheckOut()">CheckOut</button></td>
+    </tr>
+</div>
+
 </ng-container>
-
-
-
 
 
 
