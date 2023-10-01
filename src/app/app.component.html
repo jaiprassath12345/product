@@ -1,17 +1,10 @@
 <mat-toolbar >
-
-
-  <mat-icon aria-hidden="false" aria-label="Example home icon" *ngIf="isloggedin!==true" fontIcon="dashboard"routerLink="/loginView"></mat-icon>
-
+  <mat-icon aria-hidden="false" aria-label="Example home icon"  fontIcon="dashboard"></mat-icon>
   <span>E-Shoppie</span>
   <span class="example-spacer"></span>
-  <!-- <button mat-raised-button  (click)="openDialog()">Login</button> -->
   <button mat-raised-button  routerLink="/carts">Cart</button>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" routerLink="/loginView">
-    <mat-icon aria-hidden="false" aria-label="Example home icon" *ngIf="isloggedin!==true" fontIcon="login"routerLink="/loginView"></mat-icon>
-    <mat-icon aria-hidden="false" aria-label="Example home icon" *ngIf="isloggedin" fontIcon="logout" routerLink="/logout"></mat-icon>
-  </button>
-   
+  <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" routerLink="/loginView"> -->
+  <!-- </button> -->
 </mat-toolbar>
 
 <router-outlet></router-outlet>

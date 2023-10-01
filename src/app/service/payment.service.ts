@@ -8,21 +8,16 @@ import { UAddress } from '../Model/Address';
 export class PaymentService {
 
   constructor() { }
-address?: UAddress;
+  address?: UAddress;
 
-  setaddAddress(address:UAddress)
-  {
-      this.address=address;
-      
-      console.log(this.address);
-     
+  setaddAddress(address: UAddress) {
+    this.address = address;
+
   }
 
-  getaddAddress()
-{
-  console.log(this.address);
-  return this.address;
-}
+  getaddAddress() {
+    return this.address;
+  }
 
 
 }

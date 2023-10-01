@@ -1,58 +1,36 @@
 <body>
   <h3 class="grandTotal">Sub-Total: ${{grandTotal}}</h3>
-
-  <ng-container >
-    <mat-card class="payment">
-      <mat-card-content>
-  
-        <section class="example-section">
-  
-          <h1>Address</h1>
-         
-              <div class="example-margin"  mat-dialog-close>
-                <h3 style="margin-top:15px ;">{{userDetails?.doorNo}} </h3>
-                <h3> {{userDetails?.street}}</h3>
-                <h3>{{userDetails?.city}}</h3>
-                <h3>{{userDetails?.state}}</h3>
-                <h3>{{userDetails?.zipcode}}</h3>
-              </div>
-          
-        </section>
-      </mat-card-content>
-    </mat-card>
-  </ng-container>
-
-
   <mat-card class="payment">
     <mat-card-content>
+      <div class="sections">
+        <div>
+          <h1>Address:</h1>
+        </div>
+        <div style="padding-left: 25px;">
+          <h3>Door No:{{gwt?.doorNo}} </h3>
+          <h3>Street:{{gwt?.street}}</h3>
+          <h3>City:{{gwt?.city}}</h3>
+          <h3>State:{{gwt?.state}}</h3>
+          <h3>Zipcode:{{gwt?.zipcode}}</h3>
+        </div>
+      </div>
+      <hr>
+      <h1>Payment:</h1>
 
-      <section class="example-section">
-        <h1>Payment:</h1>
+      <form action="" [formGroup]="formData" (ngSubmit)="onSubmit()">
+        <mat-radio-group [(ngModel)]="labelPosition" [ngModelOptions]="{standalone: true}">
 
-        <form action="" [formGroup]="formData" (ngSubmit)="onSubmit()">
-          <mat-radio-group [(ngModel)]="labelPosition">
+          <mat-radio-button class="example-margin" value="card">Card</mat-radio-button>
+          <input type="number" placeholder="card Number" style="margin-left: 150px;" formControlName="card">
 
-            <mat-radio-button class="example-margin" value="card">Card</mat-radio-button>
-            <input type="number" placeholder="card Number" style="margin-left: 150px;" formControlName="card">
+          <mat-radio-button class="example-margin" value="upi">UPI</mat-radio-button>
+          <input type="number" placeholder="UPI Id" style="margin-left: 150px; " formControlName="upi">
 
-            <mat-radio-button class="example-margin" value="upi">UPI</mat-radio-button>
-            <input type="number" placeholder="UPI Id" style="margin-left: 150px; " formControlName="upi">
+          <button class="submit" placeholder="place order" (click)="order()" [disabled]="!formData.valid">Place order</button>
 
-            <mat-radio-button class="example-margin" value="cash">Cash On Delivery</mat-radio-button>
-            <button class="submit" placeholder="place order" [disabled]="!formData.valid">Place order</button>
+        </mat-radio-group>
 
-          </mat-radio-group>
-
-        </form>
-      </section>
+      </form>
     </mat-card-content>
   </mat-card>
-
-  <!-- <mat-radio-group [(ngModel)]="selectedValue">
-    <mat-radio-button value="option1">Option 1</mat-radio-button>
-    <mat-radio-button value="option2">Option 2</mat-radio-button>
-    <mat-radio-button value="option3">Option 3</mat-radio-button>
-  </mat-radio-group>
-  
-  <p>Selected Value: {{ selectedValue }}</p> -->
 </body>

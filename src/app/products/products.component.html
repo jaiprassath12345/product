@@ -1,13 +1,9 @@
 <div class="container">
-    <div class="cardss" *ngFor="let product of productList">
-      
-        <img class="card-image" src="{{product.image}}" alt="">
-     
-
-     <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{product.title}}</h5>
-
-      <h3>{{product.price}}$</h3>
-        <button (click)="addToCart(product)">Add to cart</button>
- 
+  <div class="cardss" *ngFor="let product of productList">
+    <img class="card-image" src="{{product.image}}" alt="img" (click)="detailList(product.id)">
+    <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;"
+      (click)="detailList(product)">{{product.title}}</h5>
+    <h3 (click)="detailList(product)">{{product.price}}$</h3>
+    <button (click)="addToCart(product)">Add to cart</button>
   </div>
-  </div>
+</div>

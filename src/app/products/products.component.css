@@ -17,7 +17,7 @@
   transition: all 0.5s;
   display: inline-block;
   user-select: none;
-  margin-left: 30px;
+  margin-left: 10px;
   
   }
 
@@ -36,12 +36,12 @@
   button{
     display: grid;
     width: 100%;
-    background-color: #4CAF50;
+    background-color: #e4831c;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 4px;
+    border-radius: 50px;
     cursor: pointer;
   }
 

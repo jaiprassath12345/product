@@ -2,8 +2,8 @@
   <div style="display: grid; flex-wrap: wrap;" >
     
     <div *ngFor="let item of product; let i=index" class="table" style="display: flex; align-items: center; " class="cart">
-      <img style="width: 120px" src="{{item.image}}" alt="">
-      <div style="margin-left: 10px;">
+     <div class="imgs" style="width: 30%; text-align: center"> <img class="immgg" style="width: 50%" src="{{item.image}}" alt="img"></div>
+      <div class="content" style="margin-left: 10px;">
         <div class="title">${{item.title}}</div>
      
         <div style="padding: 5px;"><strong> Price: ${{item.price}}</strong> </div>
@@ -26,7 +26,7 @@
         
         <td><button (click)="emptyCart()"class="danger">Empty Cart</button></td>
         <td><button routerLink="../products"class="button">Shop More</button></td>
-        <td><button class="CheckOut"  (click)="CheckOut()">CheckOut</button></td>
+        <td><button class="CheckOut"  (click)="CheckOut()">Order Now</button></td>
     </tr>
 </div>
 
