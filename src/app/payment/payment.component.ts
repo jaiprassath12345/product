@@ -52,6 +52,7 @@ export class PaymentComponent {
     this.formData.get('upi')?.reset();
   }
   order() {
+    this.cart.removeAllCart();
     const dialogRef = this.dialog.open(OderPlacedComponent);
   }
 }
