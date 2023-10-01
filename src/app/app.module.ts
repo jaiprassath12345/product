@@ -23,7 +23,6 @@ import { PaymentComponent } from './payment/payment.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatCardModule} from '@angular/material/card';
 import {MatRadioModule} from '@angular/material/radio';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { OderPlacedComponent } from './oder-placed/oder-placed.component';
 
 
@@ -42,7 +41,7 @@ import { OderPlacedComponent } from './oder-placed/oder-placed.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,MatInputModule,MatFormFieldModule,MatIconModule,MatButtonModule,MatTabsModule,MatSnackBarModule,FormsModule
-    ,ReactiveFormsModule,MatDialogModule,HttpClientModule,MatCheckboxModule,MatCardModule,MatRadioModule, FontAwesomeModule
+    ,ReactiveFormsModule,MatDialogModule,HttpClientModule,MatCheckboxModule,MatCardModule,MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
